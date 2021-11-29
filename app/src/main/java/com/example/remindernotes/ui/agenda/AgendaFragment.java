@@ -9,19 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.remindernotes.databinding.FragmentSlideshowBinding;
+import com.example.remindernotes.databinding.FragmentAgendaBinding;
 
 public class AgendaFragment extends Fragment {
 
-    private AgendaViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private AgendaViewModel agendaViewModel;
+    private FragmentAgendaBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
+        agendaViewModel =
                 new ViewModelProvider(this).get(AgendaViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentAgendaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 

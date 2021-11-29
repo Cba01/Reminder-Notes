@@ -15,13 +15,13 @@
         android:id="@+id/nav_calendario"
         android:name="com.example.remindernotes.ui.calendario.CalendarioFragment"
         android:label="@string/menu_calendario"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_calendario" />
 
     <fragment
         android:id="@+id/nav_agenda"
         android:name="com.example.remindernotes.ui.agenda.AgendaFragment"
         android:label="@string/menu_agenda"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_agenda" />
 
 
 </navigation>
