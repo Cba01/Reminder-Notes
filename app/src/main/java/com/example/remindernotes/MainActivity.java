@@ -1,10 +1,15 @@
 package com.example.remindernotes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
+import com.example.remindernotes.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,12 +18,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Home.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
     }
 
 
-    public void Login(View view){
-        Intent intent = new Intent(MainActivity.this, Home.class);
-        startActivity(intent);
-    }
 
 }

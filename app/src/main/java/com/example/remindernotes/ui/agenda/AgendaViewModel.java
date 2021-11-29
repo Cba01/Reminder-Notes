@@ -1,14 +1,14 @@
-package com.example.remindernotes.ui.slideshow;
+package com.example.remindernotes.ui.agenda;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class AgendaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public AgendaViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is slideshow fragment");
     }

@@ -1,14 +1,14 @@
-package com.example.remindernotes.ui.gallery;
+package com.example.remindernotes.ui.calendario;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class CalendarioViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public CalendarioViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is gallery fragment");
     }

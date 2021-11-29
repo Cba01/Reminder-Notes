@@ -12,14 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.remindernotes.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/nav_calendario"
+        android:name="com.example.remindernotes.ui.calendario.CalendarioFragment"
+        android:label="@string/menu_calendario"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.remindernotes.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:id="@+id/nav_agenda"
+        android:name="com.example.remindernotes.ui.agenda.AgendaFragment"
+        android:label="@string/menu_agenda"
         tools:layout="@layout/fragment_slideshow" />
+
+
 </navigation>
