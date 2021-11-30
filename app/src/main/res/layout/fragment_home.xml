@@ -62,6 +62,7 @@
         tools:layout_editor_absoluteY="159dp"></ListView>
 
     <ImageButton
+        android:id="@+id/btnAgregar"
         android:layout_width="79dp"
         android:layout_height="100dp"
         android:layout_gravity="center"

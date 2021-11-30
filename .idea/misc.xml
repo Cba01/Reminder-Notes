@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/btn_ingreso.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/btn_mostrar.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/btn_tipo_programado.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/btn_tipo_recordatorio.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/btn_tipo_simple.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/ic_agregar_re.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/ic_baseline_perm_contact_calendar_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/drawable/ic_menu_calendario.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_add_record.xml" value="0.33" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_add_record1.xml" value="0.3484375" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_add_record_1.xml" value="0.289002557544757" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/activity_register.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/content_home.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/fragment_agenda.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/fragment_calendario.xml" value="0.3625" />
+        <entry key="..\:/Users/Pablo/AndroidStudioProjects/AplicacionesMoviles/Reminder-Notes/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/drawable/btn_ingreso.xml" value="0.3828125" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/drawable/btn_mostrar.xml" value="0.3828125" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/drawable/ic_agregar_re.xml" value="0.3828125" />
