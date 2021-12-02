@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,12 +20,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.remindernotes.AddRecord;
 import com.example.remindernotes.R;
+import com.example.remindernotes.Recordatorio;
 import com.example.remindernotes.databinding.FragmentHomeBinding;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+
+    ArrayAdapter<Recordatorio> adapter;
+    ArrayList<Recordatorio> listado;
+    ListView lstRecordatorio;
+
 
     Activity context;
 
@@ -40,6 +50,10 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
 
+
+
+
+
         return root;
 
 
@@ -51,7 +65,7 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
-    public void onStart(){
+    public void onStart() {
         super.onStart();
 
         ImageButton btnAgregar = (ImageButton) context.findViewById(R.id.btnAgregar);
@@ -64,9 +78,6 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    public void Agregar(){
-        Intent intent = new Intent(getActivity(), AddRecord.class);
-        startActivity(intent);
-    }
+
 
 }

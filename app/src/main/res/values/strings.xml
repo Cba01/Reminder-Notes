@@ -27,4 +27,8 @@
     <string name="btnProgramado">Programado</string>
     <string name="btnSimple">Simple</string>
     <string name="btnListo">Listo</string>
+    <string name="title_activity_xd">xd</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

@@ -23,6 +23,5 @@ public class AddRecord1 extends AppCompatActivity {
 
             }
         });
-
     }
 }
