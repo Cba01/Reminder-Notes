@@ -1,5 +1,6 @@
 package com.example.remindernotes.ui.home;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,8 +25,14 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
 
+    Activity context;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+
+        context = getActivity();
+
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
@@ -33,18 +40,28 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
 
-
         return root;
 
 
     }
 
-
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void onStart(){
+        super.onStart();
+
+        ImageButton btnAgregar = (ImageButton) context.findViewById(R.id.btnAgregar);
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, AddRecord.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void Agregar(){

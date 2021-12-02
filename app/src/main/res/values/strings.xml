@@ -22,7 +22,7 @@
     <string name="btnMenu"></string>
     <string name="btnUsuario"></string>
     <string name="hintTituloRecord">Título</string>
-    <string name="txtTipo">Seleccione un tipo de recordatorio:</string>
+    <string name="txtTipo">tipo de recordatorio:</string>
     <string name="btnRecordatorio">Recordatorio</string>
     <string name="btnProgramado">Programado</string>
     <string name="btnSimple">Simple</string>
