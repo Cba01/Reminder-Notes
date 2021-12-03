@@ -1,7 +1,10 @@
 package com.example.remindernotes;
 
-public class Recordatorio {
+import java.io.Serializable;
 
+public class Recordatorio implements Serializable {
+
+    String id;
     String titulo;
     String descripcion;
     String fecha;
@@ -11,7 +14,8 @@ public class Recordatorio {
     int tipo;
 
 
-    public Recordatorio(String titulo, String descripcion, String fecha, String fechaInicio, String fechaTermino, String hora, int tipo) {
+    public Recordatorio(String id, String titulo, String descripcion, String fecha, String fechaInicio, String fechaTermino, String hora, int tipo) {
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -23,6 +27,25 @@ public class Recordatorio {
 
     public Recordatorio() {
 
+    }
+
+    public Recordatorio(String id, String titulo, String descripcion) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+    }
+
+    public Recordatorio(String titulo, String descripcion) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -83,9 +106,8 @@ public class Recordatorio {
 
     @Override
     public String toString() {
-        return "com.example.remindernotes.Recordatorio{" +
-                "titulo='" + titulo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
+        return this.titulo + this.descripcion;
     }
+
+
 }
