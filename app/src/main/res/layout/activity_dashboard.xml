@@ -50,8 +50,25 @@
 
     </RelativeLayout>
 
+    <ListView
+        android:id="@+id/lstRecordatorio"
+        android:layout_width="match_parent"
+        android:layout_height="493dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        tools:layout_editor_absoluteX="-28dp"
+        tools:layout_editor_absoluteY="159dp"></ListView>
 
-
-
+    <ImageButton
+        android:id="@+id/btnAgregar"
+        android:layout_width="79dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:src="@drawable/ic_agregar_re"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="563dp" />
 
 </LinearLayout>

@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".CuentaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CalendarioActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AgendaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DrawerBaseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddRecord3"
             android:exported="true" />
         <activity
@@ -23,9 +38,6 @@
             android:exported="true" />
         <activity
             android:name=".Register"
-            android:exported="true" />
-        <activity
-            android:name=".Home"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
