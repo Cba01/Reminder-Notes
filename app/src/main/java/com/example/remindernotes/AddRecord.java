@@ -7,21 +7,32 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.android.material.button.MaterialButton;
 
+import java.util.Calendar;
+
 public class AddRecord extends AppCompatActivity {
+
+    Calendar c;
+    DatePickerDialog dpd;
+    int hora,minuto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,7 @@ public class AddRecord extends AppCompatActivity {
 
             }
         });
+
 
         TextView txtFechaInicio = findViewById(R.id.txtFecha_inicio);
         TextView txtFechaTermino = findViewById(R.id.txtFechaTermino);
@@ -59,6 +71,9 @@ public class AddRecord extends AppCompatActivity {
                 switch(checkedId){
                     case R.id.btnRecordatorio:
                         System.out.println("---------------------RECORDATORIO--------------------------");
+                        btnFechaInicio.setText("");
+                        btnFechaTermino.setText("");
+                        btnHora.setText("");
 
                         txtFechaInicio.setVisibility(View.VISIBLE);
                         txtHora.setVisibility(View.VISIBLE);
@@ -70,6 +85,10 @@ public class AddRecord extends AppCompatActivity {
                                 break;
                     case R.id.btnProgramado:
                         System.out.println("---------------------PROGRAMADO--------------------------");
+                        btnFechaInicio.setText("");
+                        btnFechaTermino.setText("");
+                        btnHora.setText("");
+
                         txtFechaInicio.setVisibility(View.VISIBLE);
                         txtHora.setVisibility(View.VISIBLE);
                         btnFechaInicio.setVisibility(View.VISIBLE);
@@ -80,6 +99,10 @@ public class AddRecord extends AppCompatActivity {
                         break;
                     case R.id.btnSimple:
                         System.out.println("---------------------SIMPLE--------------------------");
+                        btnFechaInicio.setText("");
+                        btnFechaTermino.setText("");
+                        btnHora.setText("");
+
                         txtFechaInicio.setVisibility(View.GONE);
                         txtHora.setVisibility(View.GONE);
                         btnFechaInicio.setVisibility(View.GONE);
@@ -93,7 +116,92 @@ public class AddRecord extends AppCompatActivity {
             }
         });
 
+        //AGREGAR LA FECHA
+        btnFechaInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                int dia = c.get(Calendar.DAY_OF_MONTH);
+                int mes = c.get(Calendar.MONTH);
+                int año = c.get(Calendar.YEAR);
+
+                dpd = new DatePickerDialog(AddRecord.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        btnFechaInicio.setText(dayOfMonth + "/" + (month+1) + "/"+year);
+                        System.out.println(dayOfMonth + "/" + (month+1) + "/"+year);
+                    }
+                }, 2021 , mes, dia);
+                dpd.show();
+            }
+        });
+
+
+        //AGREGAR HORA
+        btnHora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        hora = hourOfDay;
+                        minuto=minute;
+                        btnHora.setText(hora+":"+minuto);
+                        System.out.println(hora+":"+minuto);
+
+                    }
+                };
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(AddRecord.this, onTimeSetListener, hora, minuto, true);
+                timePickerDialog.setTitle("Selecciona una hora");
+                timePickerDialog.show();
+            }
+        });
+
+        //GUARDAR RECORDATORIO
+        Button btnListo = findViewById(R.id.btnListo);
+        btnListo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText txtTitulo = findViewById(R.id.txtTituloRecordatorio);
+                EditText txtDescripcion = findViewById(R.id.txtDescripcionRecordatorio);
+
+                String titulo = txtTitulo.getText().toString().trim();
+                String descripcion = txtDescripcion.getText().toString().trim();
+
+                Recordatorio r = new Recordatorio(titulo, descripcion);
+                Intent intent = new Intent();
+                intent.putExtra("recordatorio", r);
+                intent.putExtra("accion", "AGREGAR");
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+            }
+        });
+
+        btnFechaTermino.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = Calendar.getInstance();
+                int dia = c.get(Calendar.DAY_OF_MONTH);
+                int mes = c.get(Calendar.MONTH);
+                int año = c.get(Calendar.YEAR);
+
+                dpd = new DatePickerDialog(AddRecord.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        btnFechaTermino.setText(dayOfMonth + "/" + (month+1) + "/"+year);
+                        System.out.println(dayOfMonth + "/" + (month+1) + "/"+year);
+                    }
+                }, 2021 , mes, dia);
+                dpd.show();
+            }
+        });
+
     }
+
+
 
 
 }

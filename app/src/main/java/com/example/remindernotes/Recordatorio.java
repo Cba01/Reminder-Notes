@@ -106,8 +106,8 @@ public class Recordatorio implements Serializable {
 
     @Override
     public String toString() {
-        return this.titulo + this.descripcion;
+        return
+                 titulo + '\n'+
+                 descripcion;
     }
-
-
 }

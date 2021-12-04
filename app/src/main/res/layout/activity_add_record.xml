@@ -160,7 +160,7 @@
             android:layout_height="37dp"
             android:layout_marginLeft="23dp"
             android:layout_marginRight="25dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="14dp"
             android:visibility="gone"
             tools:text="DD/MM/YY" />
@@ -172,7 +172,7 @@
             android:visibility="gone"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="50dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="14dp"
             tools:text="HH:MM" />
     </LinearLayout>
@@ -195,7 +195,7 @@
         android:visibility="gone"
         android:layout_marginLeft="56dp"
         android:layout_marginRight="25dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="14dp"
         tools:text="DD/MM/YY" />
 

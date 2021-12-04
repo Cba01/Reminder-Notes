@@ -81,7 +81,7 @@ public class DashboardActivity extends DrawerBaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DashboardActivity.this, AddRecord.class);
                 launchActivity.launch(intent);
-                startActivityForResult(intent,Activity.RESULT_OK);
+
             }
         });
 
@@ -96,9 +96,8 @@ public class DashboardActivity extends DrawerBaseActivity {
      listado = db.getRecordatorio();
      db.close();
      for (Recordatorio r : listado){
-
-            Log.i("CON:", r.getTitulo());
-
+         adapter.add(r);
      }
+     adapter.notifyDataSetChanged();
     }
 }
