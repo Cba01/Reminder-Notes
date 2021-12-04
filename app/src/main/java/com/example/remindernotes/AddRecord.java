@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class AddRecord extends AppCompatActivity {
 
@@ -16,35 +19,6 @@ public class AddRecord extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_record);
 
-
-
-
-        Button btntipoR = findViewById(R.id.btn_recordatorio);
-        btntipoR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddRecord.this, AddRecord1.class);
-               startActivity(intent);
-            }
-        });
-
-        Button btntipoP = findViewById(R.id.btn_programado);
-        btntipoP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddRecord.this, AddRecord2.class);
-                startActivity(intent);
-            }
-        });
-
-        Button btntipoS = findViewById(R.id.btn_simple);
-        btntipoS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddRecord.this, AddRecord3.class);
-                startActivity(intent);
-            }
-        });
 
         ImageButton btnAtras = findViewById(R.id.btnAtras);
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +29,12 @@ public class AddRecord extends AppCompatActivity {
 
             }
         });
+
+        TextView txtFecha_inicio = findViewById(R.id.txtFecha_inicio);
+        TextView txtHora = findViewById(R.id.txtHora);
+
+        RadioButton btnRecordatorio = findViewById(R.id.btnRecordatorio);
+        btnRecordatorio.setOnCheckedChangeListener();
 
     }
 
