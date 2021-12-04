@@ -1,24 +1,23 @@
 package com.example.remindernotes;
 
 import java.io.Serializable;
+import java.text.DateFormat;
 
 public class Recordatorio implements Serializable {
 
     String id;
     String titulo;
     String descripcion;
-    String fecha;
     String fechaInicio;
     String fechaTermino;
     String hora;
     int tipo;
 
 
-    public Recordatorio(String id, String titulo, String descripcion, String fecha, String fechaInicio, String fechaTermino, String hora, int tipo) {
+    public Recordatorio(String id, String titulo, String descripcion, String fechaInicio, String fechaTermino, String hora, int tipo) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fecha = fecha;
         this.fechaInicio = fechaInicio;
         this.fechaTermino = fechaTermino;
         this.hora = hora;
@@ -27,6 +26,15 @@ public class Recordatorio implements Serializable {
 
     public Recordatorio() {
 
+    }
+
+    public Recordatorio(String titulo, String descripcion, String fechaInicio, String fechaTermino, String hora, int tipo) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaTermino = fechaTermino;
+        this.hora = hora;
+        this.tipo = tipo;
     }
 
     public Recordatorio(String id, String titulo, String descripcion) {
@@ -62,14 +70,6 @@ public class Recordatorio implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
     }
 
     public String getFechaInicio() {
@@ -108,6 +108,8 @@ public class Recordatorio implements Serializable {
     public String toString() {
         return
                  titulo + '\n'+
-                 descripcion;
+                 descripcion +'\n'+
+                  fechaInicio  +'\n'+
+                  fechaTermino  + '\n';
     }
 }

@@ -38,7 +38,7 @@ public class DashboardActivity extends DrawerBaseActivity {
 
         this.listado = new ArrayList<Recordatorio>();
         lstRecordatorio = findViewById(R.id.lstRecordatorio);
-        this.adapter = new ArrayAdapter<Recordatorio>(this, android.R.layout.simple_list_item_1);
+        this.adapter = new ArrayAdapter<Recordatorio>(this, R.layout.lst_recordatorio);
         lstRecordatorio.setAdapter(adapter);
 
         this.cargarDatosInciales();
@@ -58,7 +58,7 @@ public class DashboardActivity extends DrawerBaseActivity {
 
                             RecordatorioDB db = new RecordatorioDB(DashboardActivity.this);
                             db.open();
-                            db.guardarRecordatorio(r.getTitulo(),r.getDescripcion());
+                            db.guardarRecordatorio(r.getTitulo(),r.getDescripcion(), r.getFechaInicio(), r.getFechaTermino(), r.getHora(),r. getTipo());
                             db.close();
 
                             listado.add(r);

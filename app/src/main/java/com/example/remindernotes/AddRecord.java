@@ -34,11 +34,15 @@ public class AddRecord extends AppCompatActivity {
     DatePickerDialog dpd;
     int hora,minuto;
 
+    TextView txtFecha_inicio, txtHora;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_record);
 
+        txtFecha_inicio = findViewById(R.id.txtFecha_inicio);
+        txtHora = findViewById(R.id.txtHora);
 
         ImageButton btnAtras = findViewById(R.id.btnAtras);
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +58,7 @@ public class AddRecord extends AppCompatActivity {
         TextView txtFechaInicio = findViewById(R.id.txtFecha_inicio);
         TextView txtFechaTermino = findViewById(R.id.txtFechaTermino);
         TextView txtHora = findViewById(R.id.txtHora);
+        TextView txtTipo = findViewById(R.id.txtTipo);
         Button btnFechaInicio = findViewById(R.id.btnFechaInicio);
         Button btnFechaTermino = findViewById(R.id.btnFechaFinal);
         Button btnHora = findViewById(R.id.btnHora);
@@ -74,6 +79,7 @@ public class AddRecord extends AppCompatActivity {
                         btnFechaInicio.setText("");
                         btnFechaTermino.setText("");
                         btnHora.setText("");
+                        txtTipo.setText("1");
 
                         txtFechaInicio.setVisibility(View.VISIBLE);
                         txtHora.setVisibility(View.VISIBLE);
@@ -88,6 +94,7 @@ public class AddRecord extends AppCompatActivity {
                         btnFechaInicio.setText("");
                         btnFechaTermino.setText("");
                         btnHora.setText("");
+                        txtTipo.setText("2");
 
                         txtFechaInicio.setVisibility(View.VISIBLE);
                         txtHora.setVisibility(View.VISIBLE);
@@ -102,6 +109,7 @@ public class AddRecord extends AppCompatActivity {
                         btnFechaInicio.setText("");
                         btnFechaTermino.setText("");
                         btnHora.setText("");
+                        txtTipo.setText("3");
 
                         txtFechaInicio.setVisibility(View.GONE);
                         txtHora.setVisibility(View.GONE);
@@ -160,26 +168,6 @@ public class AddRecord extends AppCompatActivity {
             }
         });
 
-        //GUARDAR RECORDATORIO
-        Button btnListo = findViewById(R.id.btnListo);
-        btnListo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText txtTitulo = findViewById(R.id.txtTituloRecordatorio);
-                EditText txtDescripcion = findViewById(R.id.txtDescripcionRecordatorio);
-
-                String titulo = txtTitulo.getText().toString().trim();
-                String descripcion = txtDescripcion.getText().toString().trim();
-
-                Recordatorio r = new Recordatorio(titulo, descripcion);
-                Intent intent = new Intent();
-                intent.putExtra("recordatorio", r);
-                intent.putExtra("accion", "AGREGAR");
-                setResult(Activity.RESULT_OK, intent);
-                finish();
-            }
-        });
-
         btnFechaTermino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,6 +184,31 @@ public class AddRecord extends AppCompatActivity {
                     }
                 }, 2021 , mes, dia);
                 dpd.show();
+            }
+        });
+
+        //GUARDAR RECORDATORIO
+        Button btnListo = findViewById(R.id.btnListo);
+        btnListo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText txtTitulo = findViewById(R.id.txtTituloRecordatorio);
+                EditText txtDescripcion = findViewById(R.id.txtDescripcionRecordatorio);
+
+                String titulo = txtTitulo.getText().toString().trim();
+                String descripcion = txtDescripcion.getText().toString().trim();
+                String fechaInicio = String.valueOf(btnFechaInicio.getText());
+                String fechaTermino = String.valueOf(btnFechaTermino.getText());
+                String hora = String.valueOf(btnHora.getText());
+                String txtTipos = String.valueOf(txtTipo.getText());
+                int tipo = Integer.parseInt(txtTipos);
+
+                Recordatorio r = new Recordatorio(titulo, descripcion, fechaInicio, fechaTermino, hora, tipo);
+                Intent intent = new Intent();
+                intent.putExtra("recordatorio", r);
+                intent.putExtra("accion", "AGREGAR");
+                setResult(Activity.RESULT_OK, intent);
+                finish();
             }
         });
 
