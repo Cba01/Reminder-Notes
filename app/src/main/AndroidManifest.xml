@@ -25,15 +25,6 @@
             android:name=".DashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".AddRecord3"
-            android:exported="true" />
-        <activity
-            android:name=".AddRecord2"
-            android:exported="true" />
-        <activity
-            android:name=".AddRecord1"
-            android:exported="true" />
-        <activity
             android:name=".AddRecord"
             android:exported="true" />
         <activity

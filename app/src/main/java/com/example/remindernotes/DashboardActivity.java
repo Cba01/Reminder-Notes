@@ -50,16 +50,22 @@ public class DashboardActivity extends DrawerBaseActivity {
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK){
                             Intent data = result.getData();
-                        Recordatorio r = new Recordatorio ("hola","como estas");
-                        //if(data.getIntExtra("add",0) == 1){
+                            String accion = data.getStringExtra("accion");
+                            Log.i("ACCION", accion);
+
+                        if(accion.equalsIgnoreCase("AGREGAR")){
+                            Recordatorio r = (Recordatorio) data.getSerializableExtra("recordatorio");
+
                             RecordatorioDB db = new RecordatorioDB(DashboardActivity.this);
                             db.open();
-                            ArrayList<Recordatorio> record = db.getRecordatorio();
+                            db.guardarRecordatorio(r.getTitulo(),r.getDescripcion());
                             db.close();
+
                             listado.add(r);
                             adapter.add(r);
+                            adapter.notifyDataSetChanged();
 
-                        //}
+                        }
 
                         if (data.getIntExtra("update", 0) == 1){
                             adapter.remove(adapter.getItem(data.getIntExtra("position", 0)));
@@ -75,6 +81,7 @@ public class DashboardActivity extends DrawerBaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DashboardActivity.this, AddRecord.class);
                 launchActivity.launch(intent);
+                startActivityForResult(intent,Activity.RESULT_OK);
             }
         });
 
