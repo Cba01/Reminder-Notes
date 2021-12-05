@@ -90,6 +90,10 @@ public class RecordatorioDB {
 
     }
 
+    public long borrarRecordatorio(String id){
+        return this.ourDatabase.delete(DATABASE_TABLE, KEY_ID + "=?", new String[]{id});
+    }
+
     private class DBHelper extends SQLiteOpenHelper{
 
         public DBHelper(@Nullable Context context){

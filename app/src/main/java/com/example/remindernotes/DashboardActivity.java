@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -67,10 +68,24 @@ public class DashboardActivity extends DrawerBaseActivity {
 
                         }
 
-                        if (data.getIntExtra("update", 0) == 1){
-                            adapter.remove(adapter.getItem(data.getIntExtra("position", 0)));
-                        }
-                        adapter.notifyDataSetChanged();
+                            if (accion.equalsIgnoreCase("ELIMINAR")){
+                                Recordatorio r = (Recordatorio) data.getSerializableExtra("recordatorio");
+                                RecordatorioDB db = new RecordatorioDB(DashboardActivity.this);
+                                db.open();
+                                db.borrarRecordatorio(r.getId());
+                                db.close();
+                                final int size = listado.size();
+                                for (int i = 0; i < size; i++) {
+                                    Recordatorio object = listado.get(i);
+                                    Log.i("ITEM " + i, object.getId());
+                                    if (object.getId().equals(r.getId())){
+                                        listado.remove(object);
+                                        adapter.remove(object);
+                                        adapter.notifyDataSetChanged();
+                                        return;
+                                    }
+                                }
+                            }
                     }
                 }
                 });
@@ -82,6 +97,16 @@ public class DashboardActivity extends DrawerBaseActivity {
                 Intent intent = new Intent(DashboardActivity.this, AddRecord.class);
                 launchActivity.launch(intent);
 
+            }
+        });
+
+        lstRecordatorio.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Recordatorio r = listado.get(position);
+                Intent intent = new Intent(DashboardActivity.this, DetalleActivity.class);
+                intent.putExtra("recordatorio", r);
+                launchActivity.launch(intent);
             }
         });
 
