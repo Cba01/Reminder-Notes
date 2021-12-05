@@ -64,7 +64,9 @@ public class DashboardActivity extends DrawerBaseActivity {
                             db.close();
 
                             listado.add(r);
-                            adapter.add(r);
+                            if (r.getTipo()!=3){
+                                adapter.add(r);
+                            }
                             adapter.notifyDataSetChanged();
 
                         }
@@ -117,13 +119,16 @@ public class DashboardActivity extends DrawerBaseActivity {
 
     private void cargarDatosInciales(){
 
-     RecordatorioDB db = new RecordatorioDB(this);
-     db.open();
-     listado = db.getRecordatorio();
-     db.close();
-     for (Recordatorio r : listado){
-         adapter.add(r);
-     }
-     adapter.notifyDataSetChanged();
+        RecordatorioDB db = new RecordatorioDB(this);
+        db.open();
+        listado = db.getRecordatorio();
+        db.close();
+        for (Recordatorio r : listado){
+            if (r.getTipo()!=3){
+                adapter.add(r);
+            }
+
+        }
+        adapter.notifyDataSetChanged();
     }
 }

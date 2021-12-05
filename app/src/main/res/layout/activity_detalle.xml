@@ -22,6 +22,7 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/txtInfoTitulo"
+            android:layout_marginBottom="4dp"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6mm"
@@ -29,12 +30,14 @@
             android:textSize="3mm"></TextView>
         <TextView
             android:id="@+id/txtInfoDescricpion"
+            android:layout_marginBottom="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Descripción"
             android:textSize="3mm"></TextView>
         <TextView
             android:id="@+id/txtInfoFechaInicio"
+            android:layout_marginBottom="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fecha de inicio"
@@ -42,6 +45,7 @@
             ></TextView>
         <TextView
             android:id="@+id/txtInfoFechaTermino"
+            android:layout_marginBottom="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fecha de Termino"
@@ -57,8 +61,12 @@
     </LinearLayout>
     <Button
         android:id="@+id/btnEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="110dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_mostrar"
         android:text="@string/btnEliminar">
     </Button>
 </LinearLayout>
