@@ -42,14 +42,7 @@
             tools:layout_editor_absoluteX="126dp"
             tools:layout_editor_absoluteY="59dp" />
 
-        <ImageButton
-            android:id="@+id/btnUsuario"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/img_3" />
+
     </LinearLayout>
 
 

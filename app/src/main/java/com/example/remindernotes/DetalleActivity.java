@@ -16,16 +16,19 @@ public class DetalleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle);
 
         Recordatorio r = (Recordatorio) getIntent().getSerializableExtra("recordatorio");
+
         TextView txtTitulo = findViewById(R.id.txtInfoTitulo);
         TextView txtDescripcion = findViewById(R.id.txtInfoDescricpion);
         TextView txtFechaInicio = findViewById(R.id.txtInfoFechaInicio);
         TextView txtFechaTermino = findViewById(R.id.txtInfoFechaTermino);
         TextView txtHora = findViewById(R.id.txtInfoHora);
+
         txtTitulo.setText("Título: " + r.getTitulo());
         txtDescripcion.setText("Descripción: " + r.getDescripcion());
         txtFechaInicio.setText("Fecha de inicio: " + r.getFechaInicio());
         txtFechaTermino.setText("Fecha de termino: " + r.getFechaTermino());
         txtHora.setText("Hora de inicio: " + r.getHora());
+
         Button btnEliminar = findViewById(R.id.btnEliminar);
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override

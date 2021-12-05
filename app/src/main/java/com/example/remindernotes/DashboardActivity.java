@@ -59,7 +59,8 @@ public class DashboardActivity extends DrawerBaseActivity {
 
                             RecordatorioDB db = new RecordatorioDB(DashboardActivity.this);
                             db.open();
-                            db.guardarRecordatorio(r.getTitulo(),r.getDescripcion(), r.getFechaInicio(), r.getFechaTermino(), r.getHora(),r. getTipo());
+                            long id = db.guardarRecordatorio(r.getTitulo(),r.getDescripcion(), r.getFechaInicio(), r.getFechaTermino(), r.getHora(),r. getTipo());
+                            r.setId(String.valueOf(id));
                             db.close();
 
                             listado.add(r);

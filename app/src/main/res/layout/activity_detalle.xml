@@ -8,10 +8,11 @@
     android:orientation="vertical"
     android:padding="3mm"
     tools:context=".DetalleActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recordatorio"
+        android:text="Reminder Notes"
         android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textSize="6mm"></TextView>
