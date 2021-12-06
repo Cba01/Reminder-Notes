@@ -56,14 +56,22 @@
     <ListView
         android:id="@+id/listAgenda"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="383dp"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="10dp"
-        >
-
+        android:paddingBottom="10dp">
 
     </ListView>
+
+    <ImageButton
+        android:id="@+id/btnAgregarSimple"
+        android:layout_width="79dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:src="@drawable/ic_agregar_re"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="563dp" />
 
 </LinearLayout>

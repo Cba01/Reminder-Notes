@@ -83,14 +83,7 @@
             android:layout_height="50dp"
             android:text="@string/btnProgramado" />
 
-        <RadioButton
-            android:id="@+id/btnSimple"
-            android:layout_width="120dp"
-            android:textAlignment="center"
-            android:layout_height="50dp"
-            android:background="@drawable/radio_selector_simple"
-            android:button="@android:color/transparent"
-            android:text="@string/btnSimple" />
+
     </RadioGroup>
 
     <EditText

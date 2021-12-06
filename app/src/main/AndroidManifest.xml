@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".DetalleAgenda"
+            android:exported="true" />
+        <activity
+            android:name=".AddAgenda"
+            android:exported="true" />
+        <activity
             android:name=".DetalleActivity"
             android:exported="true" />
         <activity

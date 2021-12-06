@@ -109,7 +109,7 @@ public class Recordatorio implements Serializable {
         return
                  titulo + '\n'+
                  descripcion +'\n'+
-                  fechaInicio  +'\n'+
-                  fechaTermino  + '\n';
+                  fechaInicio  +' '+
+                  fechaTermino ;
     }
 }

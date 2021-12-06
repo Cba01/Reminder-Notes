@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3mm"
+    tools:context=".DetalleAgenda">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reminder Notes"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="6mm"></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtInfoTituloSimple"
+            android:layout_marginBottom="4dp"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6mm"
+            android:text="Titulo"
+            android:textSize="3mm"></TextView>
+        <TextView
+            android:id="@+id/txtInfoDescricpionSimple"
+            android:layout_marginBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textSize="3mm"></TextView>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnEliminarAgenda"
+        android:layout_width="110dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_mostrar"
+        android:text="@string/btnEliminar">
+    </Button>
+</LinearLayout>

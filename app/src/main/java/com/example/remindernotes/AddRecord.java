@@ -67,7 +67,6 @@ public class AddRecord extends AppCompatActivity {
         RadioGroup grupoRadio = findViewById(R.id.grupoRadio);
         RadioButton btnRecordatorio = findViewById(R.id.btnRecordatorio);
         RadioButton btnProgramado = findViewById(R.id.btnProgramado);
-        RadioButton btnSimple = findViewById(R.id.btnProgramado);
 
         grupoRadio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -104,21 +103,7 @@ public class AddRecord extends AppCompatActivity {
                         txtFechaTermino.setVisibility(View.VISIBLE);
 
                         break;
-                    case R.id.btnSimple:
-                        System.out.println("---------------------SIMPLE--------------------------");
-                        btnFechaInicio.setText("");
-                        btnFechaTermino.setText("");
-                        btnHora.setText("");
-                        txtTipo.setText("3");
 
-                        txtFechaInicio.setVisibility(View.GONE);
-                        txtHora.setVisibility(View.GONE);
-                        btnFechaInicio.setVisibility(View.GONE);
-                        btnHora.setVisibility(View.GONE);
-                        btnFechaTermino.setVisibility(View.GONE);
-                        txtFechaTermino.setVisibility(View.GONE);
-
-                        break;
                 }
 
             }

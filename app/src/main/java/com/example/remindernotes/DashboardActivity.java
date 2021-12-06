@@ -42,7 +42,7 @@ public class DashboardActivity extends DrawerBaseActivity {
         this.adapter = new ArrayAdapter<Recordatorio>(this, R.layout.lst_recordatorio);
         lstRecordatorio.setAdapter(adapter);
 
-        this.cargarDatosInciales();
+        this.cargarDatosIniciales();
 
         ActivityResultLauncher<Intent> launchActivity = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -63,8 +63,9 @@ public class DashboardActivity extends DrawerBaseActivity {
                             r.setId(String.valueOf(id));
                             db.close();
 
-                            listado.add(r);
+
                             if (r.getTipo()!=3){
+                                listado.add(r);
                                 adapter.add(r);
                             }
                             adapter.notifyDataSetChanged();
@@ -117,7 +118,7 @@ public class DashboardActivity extends DrawerBaseActivity {
 
     }
 
-    private void cargarDatosInciales(){
+    private void cargarDatosIniciales(){
 
         RecordatorioDB db = new RecordatorioDB(this);
         db.open();
