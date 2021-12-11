@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.remindernotes.databinding.ActivityDashboardBinding;
 
@@ -111,6 +112,28 @@ public class DashboardActivity extends DrawerBaseActivity {
                 Intent intent = new Intent(DashboardActivity.this, DetalleActivity.class);
                 intent.putExtra("recordatorio", r);
                 launchActivity.launch(intent);
+            }
+        });
+
+        //Filtro buscar
+        ImageButton btnBuscar = findViewById(R.id.btnBuscar);
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayList<Recordatorio> filtroRecordatorio = new ArrayList<>();
+                TextView txtBuscar = findViewById(R.id.txtBuscador);
+                String filtro = txtBuscar.getText().toString();
+
+                adapter.clear();
+
+                for ( Recordatorio r : listado) {
+                    if (r.getTitulo().contains(filtro)){
+                        filtroRecordatorio.add(r);
+                        adapter.add(r);
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
         });
 

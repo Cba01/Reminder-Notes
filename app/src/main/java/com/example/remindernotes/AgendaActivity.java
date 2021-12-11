@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.remindernotes.databinding.ActivityAgendaBinding;
 import com.example.remindernotes.databinding.ActivityDashboardBinding;
@@ -107,6 +108,28 @@ public class AgendaActivity extends DrawerBaseActivity {
                 Intent intent = new Intent(AgendaActivity.this, DetalleAgenda.class);
                 intent.putExtra("agenda", a);
                 launchActivity.launch(intent);
+            }
+        });
+
+        //Filtro buscar
+        ImageButton btnBuscar = findViewById(R.id.btnBuscar_agenda);
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayList<Agenda> filtroRecordatorio = new ArrayList<>();
+                TextView txtBuscador = findViewById(R.id.txtBuscador);
+                String filtro = txtBuscador.getText().toString();
+
+                adapter.clear();
+
+                for ( Agenda a : listado) {
+                    if (a.getTitulo().contains(filtro)){
+                        filtroRecordatorio.add(a);
+                        adapter.add(a);
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
         });
 

@@ -39,9 +39,9 @@
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_add_record1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_add_record2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_add_record3.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_agenda.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_agenda.xml" value="0.33" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_calendario.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_cuenta.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_cuenta.xml" value="0.33" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_detalle.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/activity_detalle_agenda.xml" value="0.25" />
@@ -61,6 +61,7 @@
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/lst_recordatorio.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/main_drawer_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/layout/nav_header_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/menu/activity_home_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/bryan/AndroidStudioProjects/Reminder-Notes/app/src/main/res/menu/home.xml" value="0.36666666666666664" />

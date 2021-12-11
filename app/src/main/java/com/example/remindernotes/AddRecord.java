@@ -23,6 +23,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -32,7 +33,7 @@ public class AddRecord extends AppCompatActivity {
 
     Calendar c;
     DatePickerDialog dpd;
-    int hora,minuto;
+    int hora, minuto;
 
     TextView txtFecha_inicio, txtHora;
 
@@ -72,7 +73,7 @@ public class AddRecord extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                switch(checkedId){
+                switch (checkedId) {
                     case R.id.btnRecordatorio:
                         System.out.println("---------------------RECORDATORIO--------------------------");
                         btnFechaInicio.setText("");
@@ -87,7 +88,7 @@ public class AddRecord extends AppCompatActivity {
 
                         btnFechaTermino.setVisibility(View.GONE);
                         txtFechaTermino.setVisibility(View.GONE);
-                                break;
+                        break;
                     case R.id.btnProgramado:
                         System.out.println("---------------------PROGRAMADO--------------------------");
                         btnFechaInicio.setText("");
@@ -121,10 +122,10 @@ public class AddRecord extends AppCompatActivity {
                 dpd = new DatePickerDialog(AddRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        btnFechaInicio.setText(dayOfMonth + "/" + (month+1) + "/"+year);
-                        System.out.println(dayOfMonth + "/" + (month+1) + "/"+year);
+                        btnFechaInicio.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                        System.out.println(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
-                }, 2021 , mes, dia);
+                }, 2021, mes, dia);
                 dpd.show();
             }
         });
@@ -140,9 +141,9 @@ public class AddRecord extends AppCompatActivity {
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
                         hora = hourOfDay;
-                        minuto=minute;
-                        btnHora.setText(hora+":"+minuto);
-                        System.out.println(hora+":"+minuto);
+                        minuto = minute;
+                        btnHora.setText(hora + ":" + minuto);
+                        System.out.println(hora + ":" + minuto);
 
                     }
                 };
@@ -164,10 +165,10 @@ public class AddRecord extends AppCompatActivity {
                 dpd = new DatePickerDialog(AddRecord.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        btnFechaTermino.setText(dayOfMonth + "/" + (month+1) + "/"+year);
-                        System.out.println(dayOfMonth + "/" + (month+1) + "/"+year);
+                        btnFechaTermino.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                        System.out.println(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
-                }, 2021 , mes, dia);
+                }, 2021, mes, dia);
                 dpd.show();
             }
         });
@@ -188,18 +189,44 @@ public class AddRecord extends AppCompatActivity {
                 String txtTipos = String.valueOf(txtTipo.getText());
                 int tipo = Integer.parseInt(txtTipos);
 
-                Recordatorio r = new Recordatorio(titulo, descripcion, fechaInicio, fechaTermino, hora, tipo);
-                Intent intent = new Intent();
-                intent.putExtra("recordatorio", r);
-                intent.putExtra("accion", "AGREGAR");
-                setResult(Activity.RESULT_OK, intent);
-                finish();
-            }
-        });
+                if (!btnRecordatorio.isChecked() && !btnProgramado.isChecked()) {
+
+                    Toast.makeText(getApplicationContext(), "Seleccione un tipo de Recordatorio", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    if (btnProgramado.isChecked()) {
+                        if (titulo.length() == 0 || descripcion.length() == 0 || fechaInicio.length() == 0 || fechaTermino.length() == 0 || hora.length() == 0) {
+                            Toast.makeText(getApplicationContext(), "Complete los campos", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Recordatorio r = new Recordatorio(titulo, descripcion, fechaInicio, fechaTermino, hora, tipo);
+                            Intent intent = new Intent();
+                            intent.putExtra("recordatorio", r);
+                            intent.putExtra("accion", "AGREGAR");
+                            setResult(Activity.RESULT_OK, intent);
+                            finish();
+                        }
+
+                    } else if (btnRecordatorio.isChecked()) {
+                        if (titulo.length() == 0 || descripcion.length() == 0 || fechaInicio.length() == 0 || hora.length() == 0) {
+                            Toast.makeText(getApplicationContext(), "Complete los campos", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Recordatorio r = new Recordatorio(titulo, descripcion, fechaInicio, fechaTermino, hora, tipo);
+                            Intent intent = new Intent();
+                            intent.putExtra("recordatorio", r);
+                            intent.putExtra("accion", "AGREGAR");
+                            setResult(Activity.RESULT_OK, intent);
+                            finish();
+                        }
+                    }
+
+                }
+
+
+                }
+            });
+
+
+        }
+
 
     }
-
-
-
-
-}

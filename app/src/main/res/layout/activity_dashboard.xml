@@ -37,6 +37,7 @@
         </EditText>
 
         <ImageButton
+            android:id="@+id/btnBuscar"
             android:layout_width="50mm"
             android:layout_height="4mm"
             android:layout_alignTop="@+id/txtBuscador"

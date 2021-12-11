@@ -2,7 +2,10 @@ package com.example.remindernotes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.remindernotes.databinding.ActivityCuentaBinding;
 
@@ -17,5 +20,6 @@ public class CuentaActivity extends DrawerBaseActivity {
         activityCuentaBinding = ActivityCuentaBinding.inflate(getLayoutInflater());
         allocateActivityTitle("Cuenta");
         setContentView(activityCuentaBinding.getRoot());
+
     }
 }
